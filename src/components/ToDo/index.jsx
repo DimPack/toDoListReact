@@ -4,7 +4,7 @@ import TaskForm from "../TaskForm/index";
 
 const ToDo = () => {
   const { tasks, addTask, setIsDone, deleteTask } = useTodo([
-    { id: "1", content: "test task", isDone: false },
+    // { id: "1", content: "test task", isDone: false },
   ]);
 
   const onSubmit = (values, formikBag) => {
@@ -24,10 +24,11 @@ const ToDo = () => {
   return (
     <section>
       <h2>Todo</h2>
+
       <TaskForm onSubmit={onSubmit} />
       <div>
         <h3>list tasks</h3>
-        <ol>{tasks.map(showTasks)}</ol>
+        {tasks.length === 0 ? (<p>empty list</p>) : (<ol>{tasks.map(showTasks)}</ol>)}
       </div>
     </section>
   );
