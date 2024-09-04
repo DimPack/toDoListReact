@@ -5,3 +5,14 @@
     text-decoration: line-through;
     color: #777;
 }
+.btnClose{
+    color: wheat;
+    background-color: red;
+    border: 1px solid black;
+    border-radius: 5px;
+    transition: all .5s;
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+    }
+}

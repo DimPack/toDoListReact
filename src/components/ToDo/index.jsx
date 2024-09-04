@@ -1,6 +1,7 @@
 import useTodo from "../../hooks/useToDo";
 import Task from "../Task/index";
 import TaskForm from "../TaskForm/index";
+import styles from "./ToDo.module.scss";
 
 const ToDo = () => {
   const { tasks, addTask, setIsDone, deleteTask } = useTodo([
@@ -22,12 +23,12 @@ const ToDo = () => {
   );
 
   return (
-    <section>
-      <h2>Todo</h2>
+    <section className={styles.container}>
+      <h2 className={styles.title}>Todo list</h2>
 
       <TaskForm onSubmit={onSubmit} />
-      <div>
-        <h3>list tasks</h3>
+      <div className={styles.blockListTask}>
+        <h3 className={styles.title}>list tasks</h3>
         {tasks.length === 0 ? (<p>empty list</p>) : (<ol>{tasks.map(showTasks)}</ol>)}
       </div>
     </section>

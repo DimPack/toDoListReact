@@ -1,4 +1,4 @@
-import { Formik, Form } from "formik";
+import { Formik, Form, ErrorMessage } from "formik";
 import PropTypes from "prop-types";
 import { taskShema } from "../../utils/validatinShemas";
 import styles from "./TaskForm.module.scss";
@@ -13,8 +13,12 @@ const TaskForm = ({ onSubmit }) => {
         validationSchema={taskShema}
       >
         <Form className={styles.form}>
-          <Input type="text" name="content" placeholder="enter task" />
-          <input type="submit" value="Add" />
+          <div className={styles.formBlock}>
+            <Input type="text" name="content" placeholder="enter task" />
+            <input type="submit" value="Add" className={styles.buttonAdd}/>
+          </div>
+
+          <ErrorMessage name="content" component="div" className={styles.invalidError}/>
         </Form>
       </Formik>
     </div>

@@ -15,7 +15,7 @@ const Task = (props) => {
     <li>
       <input type="checkbox" checked={isDone} onChange={() => setIsDone(id)} />
       <span className={spanClasses}>{content}</span>
-      <button onClick={() => deleteTask(id)}>X</button>
+      <button className={styles.btnClose} onClick={() => deleteTask(id)}>X</button>
     </li>
   );
 };
